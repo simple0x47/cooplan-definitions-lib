@@ -5,6 +5,8 @@ pub enum ErrorKind {
     MissingId,
     FailedToBorrowCategory,
     ParentNotAvailable,
+    FailedToValidateCategory,
+    FailedToValidateSourceAttribute,
 }
 
 #[derive(Debug)]

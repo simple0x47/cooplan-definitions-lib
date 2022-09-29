@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use crate::validated_source_attribute::ValidatedSourceAttribute;
 
 /// Full, input based category.
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct ValidatedSourceCategory {
     pub id: String,
     pub parent: Option<String>,

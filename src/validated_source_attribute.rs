@@ -54,3 +54,13 @@ impl TryFrom<SourceAttribute> for ValidatedSourceAttribute {
         }
     }
 }
+
+impl PartialEq for ValidatedSourceAttribute {
+    fn eq(&self, other: &Self) -> bool {
+        self.id == other.id
+            && self.name == other.name
+            && self.data_type == other.data_type
+            && self.unit == other.unit
+            && self.optional == other.optional
+    }
+}

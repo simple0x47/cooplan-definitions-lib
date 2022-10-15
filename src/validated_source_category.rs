@@ -40,3 +40,28 @@ impl TryFrom<SourceCategory> for ValidatedSourceCategory {
         }
     }
 }
+
+impl PartialEq for ValidatedSourceCategory {
+    fn eq(&self, other: &Self) -> bool {
+        if !(self.id == other.id
+            && self.parent == other.parent
+            && self.parent_name == other.parent_name
+            && self.name == other.name
+            && self.selectable_as_last == other.selectable_as_last)
+        {
+            return false;
+        }
+
+        if self.attributes.len() != other.attributes.len() {
+            return false;
+        }
+
+        for i in 0..self.attributes.len() {
+            if self.attributes[i] != other.attributes[i] {
+                return false;
+            }
+        }
+
+        true
+    }
+}

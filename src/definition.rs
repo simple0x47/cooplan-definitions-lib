@@ -23,3 +23,23 @@ impl Definition {
         self.categories.clone()
     }
 }
+
+impl PartialEq for Definition {
+    fn eq(&self, other: &Self) -> bool {
+        if self.version != other.version {
+            return false;
+        }
+
+        if self.categories.len() != other.categories.len() {
+            return false;
+        }
+
+        for i in 0..self.categories.len() {
+            if self.categories[i] != other.categories[i] {
+                return false;
+            }
+        }
+
+        true
+    }
+}

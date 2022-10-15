@@ -14,4 +14,12 @@ impl Definition {
             categories,
         }
     }
+
+    pub fn version(&self) -> String {
+        self.version.clone()
+    }
+
+    pub fn categories(&self) -> Vec<ValidatedSourceCategory> {
+        self.categories.clone()
+    }
 }
